@@ -9,12 +9,4 @@ app.get('/*', function (req, res) {
 });
 
 const server = require('http').Server(app);
-const io = require("socket.io")(server);
-server.listen(8080, () => { console.log("Server is starting...") });
-
-io.on("connection", function (socket) {
-    console.log("Co nguoi ket noi! " + socket.id);
-    socket.on("disconnect", function () {
-        console.log(socket.id + " ngat ket noi!!!");
-    });
-});
+server.listen(8080, () => console.log("Server is starting..."));
